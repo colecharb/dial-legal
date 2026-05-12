@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Pre-push hook for the dial-legal repo.
+#
+# When this submodule is embedded inside the dial app repo, regenerate the
+# bundled constants/legal.ts in the parent and stage the submodule pointer
+# bump so the next commit in dial picks up both atomically.
+#
+# Skips silently when this repo is checked out standalone (e.g. for editing
+# docs outside the dial app), so it's safe to run anywhere.
+
+set -euo pipefail
+
+SUBMODULE_ROOT="$(git rev-parse --show-toplevel)"
+PARENT_ROOT="$(cd "$SUBMODULE_ROOT/.." 2>/dev/null && git rev-parse --show-toplevel 2>/dev/null || true)"
+
+if [ -z "$PARENT_ROOT" ] || [ ! -f "$PARENT_ROOT/package.json" ]; then
+  exit 0
+fi
+
+if ! grep -q '"sync:legal"' "$PARENT_ROOT/package.json"; then
+  exit 0
+fi
+
+echo "[dial-legal] regenerating constants/legal.ts in parent dial repo..."
+(cd "$PARENT_ROOT" && npm run --silent sync:legal)
+(cd "$PARENT_ROOT" && git add constants/legal.ts legal)
+
+echo "[dial-legal] ✓ staged constants/legal.ts and submodule pointer in $(basename "$PARENT_ROOT")."
+echo "[dial-legal]   commit them: git -C \"$PARENT_ROOT\" commit -m 'chore(legal): bump submodule'"
