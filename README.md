@@ -18,10 +18,10 @@ The `dial` app embeds this directory as a git submodule at `legal/` and ships th
 
 ## Hook setup (one-time per checkout)
 
-This repo ships a versioned `hooks/pre-push` script that keeps the parent `dial` app in sync. To activate it after cloning or after `git submodule update --init`, run **inside the submodule checkout**:
+This repo ships a versioned `hooks/pre-push` script that keeps the parent `dial` app in sync. After `git submodule update --init` (or a fresh clone), activate it:
 
 ```
-git config core.hooksPath hooks
+cd legal && ./setup-hooks.sh
 ```
 
-The hook is a no-op when this repo is checked out standalone, so it's safe to set everywhere.
+That installs the hook into the submodule's actual git-dir as a relative symlink, so it survives `dial/` being moved on disk. The hook is a no-op when this repo is checked out standalone, so it's safe to install in any context.
