@@ -21,9 +21,10 @@ if ! grep -q '"sync:legal"' "$PARENT_ROOT/package.json"; then
   exit 0
 fi
 
-echo "[dial-legal] regenerating constants/legal.ts in parent dial repo..."
-(cd "$PARENT_ROOT" && npm run --silent sync:legal)
+# Write to stderr — `git push` swallows the hook's stdout, but lets stderr through.
+echo "[dial-legal] regenerating constants/legal.ts in parent dial repo..." >&2
+(cd "$PARENT_ROOT" && npm run --silent sync:legal >&2)
 (cd "$PARENT_ROOT" && git add constants/legal.ts legal)
 
-echo "[dial-legal] ✓ staged constants/legal.ts and submodule pointer in $(basename "$PARENT_ROOT")."
-echo "[dial-legal]   commit them: git -C \"$PARENT_ROOT\" commit -m 'chore(legal): bump submodule'"
+echo "[dial-legal] ✓ staged constants/legal.ts and submodule pointer in $(basename "$PARENT_ROOT")." >&2
+echo "[dial-legal]   commit them: git -C \"$PARENT_ROOT\" commit -m 'chore(legal): bump submodule'" >&2
