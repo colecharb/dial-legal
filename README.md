@@ -13,15 +13,7 @@ The `dial` app embeds this directory as a git submodule at `legal/` and ships th
 ## Updating the docs
 
 1. Edit the markdown here, update the **Effective date** and **Last updated** lines, and append an entry to `CHANGELOG.md`.
-2. Commit and push from inside `legal/`.
-3. The pre-push hook (see below) regenerates `constants/legal.ts` in the parent `dial` repo and stages the submodule pointer bump. Commit those staged changes in `dial` and you're done.
+2. From inside `legal/`: `git commit` and `git push`.
+3. Back in `dial/`: `npm run sync:legal` regenerates `constants/legal.ts`. Then `git add legal constants/legal.ts && git commit -m "chore(legal): bump submodule"`.
 
-## Hook setup (one-time per checkout)
-
-This repo ships a versioned `hooks/pre-push` script that keeps the parent `dial` app in sync. After `git submodule update --init` (or a fresh clone), activate it:
-
-```
-cd legal && ./setup-hooks.sh
-```
-
-That installs the hook into the submodule's actual git-dir as a relative symlink, so it survives `dial/` being moved on disk. The hook is a no-op when this repo is checked out standalone, so it's safe to install in any context.
+(The `prestart`/`preios`/`preandroid`/`preweb` hooks in `dial/package.json` also re-run `sync:legal` automatically when you boot the dev server, so the in-app content never goes stale during local development.)
