@@ -13,7 +13,7 @@ dial is operated by **Sixteen Grams**, a corporation registered in Ontario, Cana
 
 - We collect the minimum we need to run the app: your account info, what you log (brews, coffees, equipment), and basic device/version info on app launch.
 - Most of what you post in dial — brews, ratings, brew notes, usernames — is **visible to other users by default**. Don't put anything in your brews you wouldn't want public.
-- We don't sell your data. We don't use third-party advertising, analytics, or tracking.
+- We don't sell your data and we don't run advertising. We do use one product-analytics tool (PostHog, hosted in the EU) on the iOS and Android apps to understand how dial is used — details below. The web app has no analytics. You can opt out at any time by emailing us.
 - Your data is stored with Supabase in the United States (Ohio).
 - You can delete your account at any time from inside the app.
 
@@ -47,7 +47,25 @@ Each time you open dial, we record:
 - App version (JS bundle, native build, OTA update ID)
 - Your user ID (if signed in)
 
-We use this to enforce minimum supported versions, debug issues, and understand basic adoption. We do not run third-party analytics or behaviour tracking.
+We use this to enforce minimum supported versions, debug issues, and understand basic adoption. Each app launch also writes one session record (the version and device details above, plus your IP and user agent) so we can support debugging and version enforcement. For product analytics, see the next section.
+
+## Product analytics
+
+On the **iOS and Android apps only**, we use [PostHog](https://posthog.com) (the `posthog-react-native` library) to understand how dial is used so we can improve it. Events are sent to PostHog's **EU cloud** (`eu.i.posthog.com`), which keeps the event data in the EU. PostHog Inc. is a US company; see "International data transfers" below. The **web app sends no analytics at all**.
+
+**What we send:**
+
+- Your dial user ID (your account identifier) when you're signed in, so events can be grouped per user.
+- Technical context: platform, app version (JS bundle, native build, OTA update ID), and whether you're signed in.
+- Product events and their basic properties: screens viewed, brews logged, cellar actions, searches, settings changes, login/signup outcomes, and app open/background with session duration. Properties are limited to things like which item or screen was involved, a rating, and lengths/counts (e.g. how long a note was, how many results a search returned).
+
+**What we do _not_ send to PostHog:** your email, password, username, the text of your brew notes or recipes, or your private cellar cost and notes.
+
+**Legal basis.** For most users we rely on legitimate interest (improving the product). For users in the EU, UK, and Quebec we rely on consent.
+
+**Opting out.** You can opt out of product analytics at any time by emailing [dial.brews@gmail.com](mailto:dial.brews@gmail.com). We'll turn off analytics collection on your account and delete any analytics data we hold about you in PostHog. You can also simply use the web app, which has no analytics.
+
+**Retention.** Analytics events are retained according to our PostHog plan's retention period (currently up to 1 year), after which they are deleted.
 
 ## How we use your information
 
@@ -79,6 +97,7 @@ We plan to share aggregated and coffee-specific analytics with roasters whose co
 dial uses a small number of service providers ("processors") to operate. They process your data on our behalf under their own privacy and security terms:
 
 - **Supabase** — authentication, database, file storage. Hosted in `us-east-2` (Ohio, USA).
+- **PostHog** — product analytics on the iOS and Android apps. Event data is stored in PostHog's EU (Frankfurt) cloud; the service is operated by PostHog Inc. (USA). See PostHog's [privacy policy](https://posthog.com/privacy) and [data processing agreement](https://posthog.com/dpa).
 - **Apple** — Sign in with Apple, App Store distribution, push notification infrastructure (if/when used).
 - **Google** — Google Play distribution (when available).
 - **Expo / EAS** — over-the-air updates and app build distribution.
@@ -88,6 +107,8 @@ If we add new processors in a way that materially changes how your data is handl
 ## International data transfers
 
 Because our database is hosted in the United States, your data is transferred from Canada (and wherever else you live) to the US for storage and processing. Supabase, our processor, maintains Standard Contractual Clauses and equivalent safeguards for users in the EU, UK, and other regions where required.
+
+Our analytics provider, PostHog, stores event data in its EU (Frankfurt) cloud, but PostHog Inc. is a US company and may access that data from the US under its data processing agreement.
 
 ## How long we keep your data
 
@@ -100,6 +121,7 @@ You can:
 
 - **Access, correct, or delete your data.** Delete your account in-app under Profile → Delete Account. To access or correct other data, email us.
 - **Request an export of your data.** We don't yet have a self-serve export tool. Email [dial.brews@gmail.com](mailto:dial.brews@gmail.com) and we'll get you a machine-readable copy within **30 days**.
+- **Opt out of product analytics.** Email [dial.brews@gmail.com](mailto:dial.brews@gmail.com) and we'll turn off analytics on your account and delete any analytics data we hold about you in PostHog. (The web app collects no analytics.)
 - **Withdraw consent** to processing where consent is the legal basis. The simplest way to do this is to delete your account.
 - **Complain to a regulator.** In Canada, the Office of the Privacy Commissioner of Canada (priv.gc.ca). In the EU/UK, your local supervisory authority. In California, the California Privacy Protection Agency.
 
