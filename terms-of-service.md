@@ -1,7 +1,7 @@
 # Terms of Service
 
-**Effective date:** 2026-05-12
-**Last updated:** 2026-05-12
+**Effective date:** 2026-05-26
+**Last updated:** 2026-05-26
 
 These Terms govern your use of the dial app and any related services we offer. By creating an account or using dial, you agree to these Terms. If you don't agree, please don't use dial.
 
@@ -34,7 +34,7 @@ You keep ownership of the content you create in dial — your brews, notes, rati
 
 - Showing them to other dial users (this is a community app — see Section 5).
 - Sharing aggregated and coffee-specific analytics with the roaster whose coffee you logged, as described in our [Privacy Policy](./privacy-policy.md).
-- Improving and operating dial (e.g. backups, debugging, abuse prevention).
+- Improving and operating dial (e.g. backups, debugging, abuse prevention, and product analytics as described in our [Privacy Policy](./privacy-policy.md)).
 
 This licence lasts as long as your content is on dial. When you delete your account, your personal content is removed; entries you contributed to shared catalogues (coffees, roasters, equipment) may remain because other users' brews reference them.
 
@@ -64,6 +64,8 @@ If you're granted "roaster admin" rights for a roaster, you may edit that roaste
 - Don't disparage competitors or other roasters in the entries.
 - You're responsible for the content you submit on behalf of the roaster.
 - Your admin rights can be revoked if abused.
+
+Edits to coffees and roasters are attributed in our database to the account that made them, so other users and admins can see who last changed an entry. Any current roaster-admin arrangements (for example, sponsored or comped roaster pages) are handled off-platform — dial does not collect any in-app payments today.
 
 We may add a separate paid subscription for roaster features in the future, with its own terms presented at that time.
 

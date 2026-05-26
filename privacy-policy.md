@@ -1,7 +1,7 @@
 # Privacy Policy
 
-**Effective date:** 2026-05-12
-**Last updated:** 2026-05-12
+**Effective date:** 2026-05-26
+**Last updated:** 2026-05-26
 
 This Privacy Policy explains what information dial collects, why, who we share it with, and what you can do about it. We've tried to write it plainly. If something is unclear, email us at [dial.brews@gmail.com](mailto:dial.brews@gmail.com).
 
@@ -86,6 +86,8 @@ By default, dial is a community app. Other signed-in users can see:
 - Coffees, roasters, grinders, brewers you've added
 - Roast and freeze/unfreeze dates from your cellar entries (cost and notes are kept private)
 
+Entries you add to the shared catalogue (coffees, roasters, and equipment) — and edits you make to existing ones — are attributed to your account in our database and visible to other users and to roaster admins, so people can see who added or last changed an entry.
+
 We do not currently offer a "private brew" or "hide profile" option. Treat anything you post as public.
 
 ## Future feature: roaster analytics
@@ -131,7 +133,8 @@ We don't charge for these requests. We may ask you to verify your identity befor
 
 - All traffic between your device and our servers is encrypted with TLS.
 - Supabase encrypts data at rest.
-- On mobile, your auth tokens are stored in the device's secure enclave (iOS Keychain / Android Keystore via Expo SecureStore).
+- On mobile, your auth tokens are stored in the device's secure storage (iOS Keychain / Android Keystore via Expo SecureStore).
+- On the web app, your session is stored in the browser's `localStorage`, which is not encrypted and is accessible to scripts running in the page; this is standard for web sessions but carries the usual browser security risks.
 - No security is perfect. If we ever experience a breach that affects your data, we'll notify you and the relevant regulators as required by law.
 
 ## Children
