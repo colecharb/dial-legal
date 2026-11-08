@@ -1,7 +1,7 @@
 # Privacy Policy
 
-**Effective date:** 2026-05-26
-**Last updated:** 2026-05-26
+**Effective date:** 2026-11-08
+**Last updated:** 2026-11-08
 
 This Privacy Policy explains what information dial collects, why, who we share it with, and what you can do about it. We've tried to write it plainly. If something is unclear, email us at [dial.brews@gmail.com](mailto:dial.brews@gmail.com).
 
@@ -13,7 +13,8 @@ dial is operated by **Sixteen Grams**, a corporation registered in Ontario, Cana
 
 - We collect the minimum we need to run the app: your account info, what you log (brews, coffees, equipment), and basic device/version info on app launch.
 - Most of what you post in dial — brews, ratings, brew notes, usernames — is **visible to other users by default**. Don't put anything in your brews you wouldn't want public.
-- We don't sell your data and we don't run advertising. We do use one product-analytics tool (PostHog, hosted in the EU) on the iOS and Android apps to understand how dial is used — details below. The web app has no analytics. You can opt out at any time by emailing us.
+- We don't sell your data and we don't run advertising. We do use one product-analytics tool (PostHog, hosted in the EU) on the iOS and Android apps to understand how dial is used — details below. The web app doesn't send anything to PostHog. You can opt out at any time by emailing us.
+- When you open a roaster's or coffee's website from dial, we count the visit, tied to your account unless you've opted out of analytics. Roasters only ever see totals, never who visited.
 - Your data is stored with Supabase in the United States (Ohio).
 - You can delete your account at any time from inside the app.
 
@@ -47,11 +48,22 @@ Each time you open dial, we record:
 - App version (JS bundle, native build, OTA update ID)
 - Your user ID (if signed in)
 
-We use this to enforce minimum supported versions, debug issues, and understand basic adoption. Each app launch also writes one session record (the version and device details above, plus your IP and user agent) so we can support debugging and version enforcement. For product analytics, see the next section.
+We use this to enforce minimum supported versions, debug issues, and understand basic adoption. Each app launch also writes one session record (the version and device details above, plus your IP and user agent) so we can support debugging and version enforcement. For product analytics, see "Product analytics" below.
+
+### Link visits
+
+When you open a roaster's or coffee's website from dial (on iOS, Android, or the web app), we record:
+
+- Which coffee or roaster it was, where the tap came from (the app, our website, or a shared link), and when
+- Your user ID, if you're signed in, unless you've opted out of analytics (see "Product analytics")
+
+Visits through `dial.16g.ca/go/...` links (for example, one someone shared with you) are recorded without any account attached, and we don't count link-preview bots.
+
+We use these counts to show roasters how many people went on to their site, and keep your user ID with a visit for our own analysis of how dial is used. Roasters only ever see totals, never who visited.
 
 ## Product analytics
 
-On the **iOS and Android apps only**, we use [PostHog](https://posthog.com) (the `posthog-react-native` library) to understand how dial is used so we can improve it. Events are sent to PostHog's **EU cloud** (`eu.i.posthog.com`), which keeps the event data in the EU. PostHog Inc. is a US company; see "International data transfers" below. The **web app sends no analytics at all**.
+On the **iOS and Android apps only**, we use [PostHog](https://posthog.com) (the `posthog-react-native` library) to understand how dial is used so we can improve it. Events are sent to PostHog's **EU cloud** (`eu.i.posthog.com`), which keeps the event data in the EU. PostHog Inc. is a US company; see "International data transfers" below. The **web app doesn't send anything to PostHog**; like the mobile apps, it does record link visits (see "Link visits" above).
 
 **What we send:**
 
@@ -63,7 +75,7 @@ On the **iOS and Android apps only**, we use [PostHog](https://posthog.com) (the
 
 **Legal basis.** For most users we rely on legitimate interest (improving the product). For users in the EU, UK, and Quebec we rely on consent.
 
-**Opting out.** You can opt out of product analytics at any time by emailing [dial.brews@gmail.com](mailto:dial.brews@gmail.com). We'll turn off analytics collection on your account and delete any analytics data we hold about you in PostHog. You can also simply use the web app, which has no analytics.
+**Opting out.** You can opt out of product analytics at any time by emailing [dial.brews@gmail.com](mailto:dial.brews@gmail.com). We'll turn off analytics collection on your account and delete any analytics data we hold about you in PostHog. From then on, link visits you make are counted without your user ID. You can also use the web app, which doesn't send anything to PostHog.
 
 **Retention.** Analytics events are retained according to our PostHog plan's retention period (currently up to 1 year), after which they are deleted.
 
@@ -116,6 +128,7 @@ Our analytics provider, PostHog, stores event data in its EU (Frankfurt) cloud, 
 
 - **Account and content data** — until you delete your account. When you delete your account, your authentication record and personal data are deleted; coffees, roasters, and equipment you added that are referenced by other users' brews are kept (your name is dissociated from them).
 - **Session telemetry** (IP, user agent, version) — retained indefinitely for now to support debugging and version enforcement. We may shorten this in the future and will update this policy if we do.
+- **Link visits** — kept with no set end date for now, as part of the counts roasters see. When you delete your account, your user ID is removed from them.
 
 ## Your rights
 
@@ -123,7 +136,7 @@ You can:
 
 - **Access, correct, or delete your data.** Delete your account in-app under Profile → Delete Account. To access or correct other data, email us.
 - **Request an export of your data.** We don't yet have a self-serve export tool. Email [dial.brews@gmail.com](mailto:dial.brews@gmail.com) and we'll get you a machine-readable copy within **30 days**.
-- **Opt out of product analytics.** Email [dial.brews@gmail.com](mailto:dial.brews@gmail.com) and we'll turn off analytics on your account and delete any analytics data we hold about you in PostHog. (The web app collects no analytics.)
+- **Opt out of product analytics.** Email [dial.brews@gmail.com](mailto:dial.brews@gmail.com) and we'll turn off analytics on your account and delete any analytics data we hold about you in PostHog. Link visits you make from then on aren't tied to your account. (The web app doesn't send anything to PostHog.)
 - **Withdraw consent** to processing where consent is the legal basis. The simplest way to do this is to delete your account.
 - **Complain to a regulator.** In Canada, the Office of the Privacy Commissioner of Canada (priv.gc.ca). In the EU/UK, your local supervisory authority. In California, the California Privacy Protection Agency.
 
