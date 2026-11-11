@@ -1,7 +1,7 @@
 # Terms of Service
 
 **Effective date:** 2026-05-26
-**Last updated:** 2026-05-26
+**Last updated:** 2026-11-11
 
 These Terms govern your use of the dial app and any related services we offer. By creating an account or using dial, you agree to these Terms. If you don't agree, please don't use dial.
 
@@ -121,4 +121,4 @@ If any part of these Terms is found unenforceable, the rest remain in effect.
 
 ## 16. Contact
 
-Questions about these Terms: [dial.brews@gmail.com](mailto:dial.brews@gmail.com).
+Questions about these Terms: [dial@16g.ca](mailto:dial@16g.ca).
