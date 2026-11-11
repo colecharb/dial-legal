@@ -1,9 +1,9 @@
 # Privacy Policy
 
 **Effective date:** 2026-11-08
-**Last updated:** 2026-11-08
+**Last updated:** 2026-11-11
 
-This Privacy Policy explains what information dial collects, why, who we share it with, and what you can do about it. We've tried to write it plainly. If something is unclear, email us at [dial.brews@gmail.com](mailto:dial.brews@gmail.com).
+This Privacy Policy explains what information dial collects, why, who we share it with, and what you can do about it. We've tried to write it plainly. If something is unclear, email us at [dial@16g.ca](mailto:dial@16g.ca).
 
 ## Who we are
 
@@ -75,7 +75,7 @@ On the **iOS and Android apps only**, we use [PostHog](https://posthog.com) (the
 
 **Legal basis.** For most users we rely on legitimate interest (improving the product). For users in the EU, UK, and Quebec we rely on consent.
 
-**Opting out.** You can opt out of product analytics at any time by emailing [dial.brews@gmail.com](mailto:dial.brews@gmail.com). We'll turn off analytics collection on your account and delete any analytics data we hold about you in PostHog. From then on, link visits you make are counted without your user ID. You can also use the web app, which doesn't send anything to PostHog.
+**Opting out.** You can opt out of product analytics at any time by emailing [dial@16g.ca](mailto:dial@16g.ca). We'll turn off analytics collection on your account and delete any analytics data we hold about you in PostHog. From then on, link visits you make are counted without your user ID. You can also use the web app, which doesn't send anything to PostHog.
 
 **Retention.** Analytics events are retained according to our PostHog plan's retention period (currently up to 1 year), after which they are deleted.
 
@@ -135,8 +135,8 @@ Our analytics provider, PostHog, stores event data in its EU (Frankfurt) cloud, 
 You can:
 
 - **Access, correct, or delete your data.** Delete your account in-app under Profile → Delete Account. To access or correct other data, email us.
-- **Request an export of your data.** We don't yet have a self-serve export tool. Email [dial.brews@gmail.com](mailto:dial.brews@gmail.com) and we'll get you a machine-readable copy within **30 days**.
-- **Opt out of product analytics.** Email [dial.brews@gmail.com](mailto:dial.brews@gmail.com) and we'll turn off analytics on your account and delete any analytics data we hold about you in PostHog. Link visits you make from then on aren't tied to your account. (The web app doesn't send anything to PostHog.)
+- **Request an export of your data.** We don't yet have a self-serve export tool. Email [dial@16g.ca](mailto:dial@16g.ca) and we'll get you a machine-readable copy within **30 days**.
+- **Opt out of product analytics.** Email [dial@16g.ca](mailto:dial@16g.ca) and we'll turn off analytics on your account and delete any analytics data we hold about you in PostHog. Link visits you make from then on aren't tied to your account. (The web app doesn't send anything to PostHog.)
 - **Withdraw consent** to processing where consent is the legal basis. The simplest way to do this is to delete your account.
 - **Complain to a regulator.** In Canada, the Office of the Privacy Commissioner of Canada (priv.gc.ca). In the EU/UK, your local supervisory authority. In California, the California Privacy Protection Agency.
 
@@ -164,4 +164,4 @@ When we make material changes, we'll update the "Effective date" at the top and 
 
 ## Contact
 
-Questions, requests, or complaints: [dial.brews@gmail.com](mailto:dial.brews@gmail.com).
+Questions, requests, or complaints: [dial@16g.ca](mailto:dial@16g.ca).
